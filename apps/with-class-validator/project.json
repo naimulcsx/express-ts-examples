@@ -1,0 +1,26 @@
+{
+  "name": "with-class-validator",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/with-class-validator/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "with-class-validator:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "with-class-validator:build:development"
+        },
+        "production": {
+          "buildTarget": "with-class-validator:build:production"
+        }
+      }
+    }
+  }
+}
