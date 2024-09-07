@@ -1,0 +1,26 @@
+{
+  "name": "with-zod",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/with-zod/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "with-zod:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "with-zod:build:development"
+        },
+        "production": {
+          "buildTarget": "with-zod:build:production"
+        }
+      }
+    }
+  }
+}
